@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calendar</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+  <div id="head">
+  <i class="fa fa-caret-left fa-3x" aria-hidden="true"></i><h1 id="monthTitle">January</h1><i class="fa fa-caret-right fa-3x" aria-hidden="true"></i><h1 id="year">2017</h1>
+  </div>
+
+    <table>
+      <tr>
+        <td class="weekday-col"><p class="weekday-content">sunday</p></td>
+        <td class="weekday-col"><p class="weekday-content">monday</p></td>
+        <td class="weekday-col"><p class="weekday-content">tuesday</p></td>
+        <td class="weekday-col"><p class="weekday-content">wednesday</p></td>
+        <td class="weekday-col"><p class="weekday-content">thursday</p></td>
+        <td class="weekday-col"><p class="weekday-content">friday</p></td>
+        <td class="weekday-col"><p class="weekday-content">saturday</p></td>
+      </tr>
+      <tr>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+      </tr>
+      <tr>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+      </tr>
+      <tr>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+      </tr>
+      <tr>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+      </tr>
+      <tr>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+      </tr>
+      <tr id="lastRow" class="hidden">
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+        <td><p></p></br><div class="hidden"></div></br><div class="hidden"></div></td>
+      </tr>
+    </table>
+
+  <div id="modal" class="hidden">
+    <div id='todoSide' class='hidden'>
+      <h2>TODOS <i class='fa fa-plus'></i></h2>
+      <input type='text' id='todoInput' placeholder='Add New Todo'>
+      <ul id='todoList' class='todos'>
+      </ul>
+    </div>
+    <div id='eventsSide' class='hidden'>
+      <h2>EVENTS</h2>
+      <ul class='events'>
+        <li class="event"><span class="time"><strong>12 am: </strong></span><span class="eventContent">Go Surfing</span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event oddEvent"><span class="time"><strong>1 am: </strong></span><span class="eventContent">Get Groceries</span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event"><span class="time"><strong>2 am: </strong></span><span class="eventContent">Learn about AJAX</span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event oddEvent"><span class="time"><strong>3 am: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event"><span class="time"><strong>4 am: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event oddEvent"><span class="time"><strong>5 am: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event"><span class="time"><strong>6 am: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event oddEvent"><span class="time"><strong>7 am: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event"><span class="time"><strong>8 am: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event oddEvent"><span class="time"><strong>9 am: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event"><span class="time"><strong>10 am: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event oddEvent"><span class="time"><strong>11 am: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event"><span class="time"><strong>12 pm: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event oddEvent"><span class="time"><strong>1 pm: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event"><span class="time"><strong>2 pm: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event oddEvent"><span class="time"><strong>3 pm: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event"><span class="time"><strong>4 pm: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event oddEvent"><span class="time"><strong>5 pm: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event"><span class="time"><strong>6 pm: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event oddEvent"><span class="time"><strong>7 pm: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event"><span class="time"><strong>8 pm: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event oddEvent"><span class="time"><strong>9 pm: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event"><span class="time"><strong>10 pm: </strong></span><span class="eventContent"></span><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+        <li class="event oddEvent"><span class="time"><strong>11 pm: </strong></span><span class="eventContent"><i class="fa fa-pencil" aria-hidden="true"></i></li>
+        <input class="eventInput hidden" type='text' id='todoInput' placeholder='Edit Event'>
+       </ul>
+     </div>
+    <i class='fa fa-times active'></i>
+  </div>
+
+
+
+
+
+  <script src="myscript.js"></script>
+</body>
+</html>

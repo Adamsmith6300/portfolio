@@ -1,0 +1,230 @@
+.bod {
+  background: rgba(10,10,10,1);
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: "Raleway", sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin: 10px 0 5px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #aaa;
+}
+
+li {
+  display: inline;
+  margin: 20px 100px 0px 135px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.current-page {
+  border-bottom: 1px solid #aaa;
+}
+
+.nav {
+  position: relative;
+}
+
+hr {
+  position: relative;
+  top: -40px;
+  width: 300px;
+  border-top: 1px solid #aaa;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+h1 {
+  font-family: "Londrina Shadow", cursive;
+  letter-spacing: 8px;
+  color: #aaa;
+  font-size: 95px;
+  text-align: center;
+  margin: 60px 0 0 0;
+}
+
+.fire {
+  background: -webkit-linear-gradient(bottom, rgba(255,0,0,1), rgba(255,255,0,1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  color: #aaa;
+  margin: 0 0 -50px 0;
+  font-weight: normal;
+}
+
+.sub-head {
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 70px 0;
+}
+
+.menu-div {
+  background-size: cover;
+  height: 300px;
+  position: relative;
+  border-radius: 12px;
+  margin: 70px 0 0 0;
+}
+
+.menu-items {
+  color: #ffffff;
+  position: absolute;
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  text-align: justify;
+  bottom: 0;
+  padding: 10px;
+  line-height: 28px;
+  margin: 0;
+  font-size: 20px;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -webkit-transition: height .5s;
+}
+
+.price {
+  float: right;
+}
+
+.menu-desc {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 170px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.first {
+  background-image: url("https://images.unsplash.com/photo-1453831362806-3d5577f014a4?dpr=1&auto=compress,format&fit=crop&w=376&h=255&q=80&cs=tinysrgb&crop=");
+  background-size: cover;
+  background-position: center;
+	background-repeat: no-repeat;
+}
+
+.second {
+  background-image: url("https://images.unsplash.com/photo-1453831210728-695502f9f795?dpr=1&auto=compress,format&fit=crop&w=376&h=226&q=80&cs=tinysrgb&crop=");
+}
+
+.third {
+  background-image: url("https://images.unsplash.com/photo-1481819167214-0427aac02394?dpr=1&auto=compress,format&fit=crop&w=376&h=258&q=80&cs=tinysrgb&crop=");
+  background-size: cover;
+  background-position: center;
+	background-repeat: no-repeat;
+}
+
+.contact-us {
+  text-transform: uppercase;
+  border: 1px solid white;
+  font-weight: normal;
+  height: 35px;
+  width: 200px;
+  padding-top: 15px;
+  position: relative;
+  left: 400px;
+  top: px;
+}
+.contact {
+  position: relative;
+  color: #ffffff;
+  text-align: center;
+  top: 10px;
+}
+
+.map {
+  position: relative;
+  top: 50px;
+  left: 100px;
+  margin-bottom: 100px;
+}
+
+.home-body {
+  background-image: url("https://images.unsplash.com/photo-1471367029819-38078e88c3fb?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
+  background-size: cover;
+  background-position: center;
+	background-repeat: no-repeat;
+  font-family: "Raleway", sans-serif;
+}
+
+.home-body li {
+  display: inline;
+  position: relative;
+  left: 240px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+html {
+  height: 100%;
+}
+
+#content {
+  padding-top: 15%;
+  text-align: center;
+  /*text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+				 0px 8px 13px rgba(0,0,0,0.1),
+				 0px 18px 23px rgba(0,0,0,0.1);*/
+}
+
+
+
+
+@media (max-width: 900px){
+  li {
+    margin: 20px 50px 0 95px;
+  }
+
+  hr {
+    width: 800px;
+  }
+}
+
+@media(max-width: 500px){
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin: 10px 0 20px 0;
+  }
+
+  div {
+    margin: 20px 13px 0 13px;
+  }
+
+  p {
+    line-height: 24px;
+  }
+
+  small {
+    font-size: 16px;
+  }
+
+  .show-description p {
+    height: 250px;
+  }
+
+  li {
+    margin: 10px 10px 0 45px;
+  }
+
+  hr {
+    width: 400px;
+  }
+
+}

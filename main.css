@@ -1,0 +1,238 @@
+
+#perspective {
+  top: 70px;
+  left: 150px;
+  width: 1200px;
+  height: 600px;
+  position: relative;
+  perspective: 600px;
+  /* half the width to view each wall from center of room */
+  border: none;
+  font-family: "Lato", sans-serif;
+}
+#perspective .menu {
+  position: relative;
+  top: -50px;
+  left: 500px;
+}
+
+#room {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-origin: 50% 50% 600px;
+  transform-style: preserve-3d;
+  transition: all 0.4s linear;
+  -webkit-transition: all 0.4s linear;
+  -mox-transition: all 0.4s linear;
+}
+
+#room .room-one,
+.room-two,
+.room-three,
+.room-four,
+.room-five,
+.room-six,
+.room-seven,
+.room-eight {
+  width: 1200px;
+  height: 600px;
+}
+
+/* transform & inverse */
+#room .room-one,
+.room-five {
+  transform: rotateY(0deg) translateZ(0px);
+}
+
+#room .room-two,
+.room-six {
+  transform: rotateY(-90deg) translateZ(-600px) translateX(600px);
+}
+
+#room .room-three,
+.room-seven {
+  transform: rotateY(180deg) translateZ(-1200px);
+}
+
+#room .room-four,
+.room-eight {
+  transform: rotateY(90deg) translateZ(-600px) translateX(-600px);
+}
+
+#room .room-top {
+  transform: rotateX(90deg) translateZ(300px) translateY(600px);
+  width: 1200px;
+  height: 1200px;
+  top: -300px;
+  background-image: url("https://static.pexels.com/photos/107956/pexels-photo-107956.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#room .room-bottom {
+  transform: rotateX(90deg) translateZ(-300px) translateY(600px);
+  width: 1200px;
+  height: 1200px;
+  top: -300px;
+  background-image: url("https://static.pexels.com/photos/1486/wood-pattern-ground-parquet-floor.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#room .inactive {
+  display: none;
+}
+
+#room figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  text-align: center;
+  background-image: url("https://images.unsplash.com/photo-1457092716468-97352752b749?dpr=1&auto=format&fit=crop&w=1500&h=1095&q=80&cs=tinysrgb&crop=");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#room .nums {
+  position: relative;
+  display: inline-block;
+  top: -320px;
+  left: -530px;
+  font-size: 150px;
+  color: white;
+}
+
+#room a {
+  width: 650px;
+  height: 500px;
+  display: inline-block;
+  position: relative;
+  top: 50px;
+  left: 90px;
+}
+
+.room-one a {
+  background-image: url(images/surfin.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.room-two a {
+  background-image: url(images/besthikes.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.room-three a {
+  background-image: url(images/calendar.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.room-four a {
+  background-image: url(images/patatap.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.room-five a {
+  background-image: url(images/breakout.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.room-six a {
+  background-image: url(images/casacaliente.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.room-seven a {
+  background-image: url(images/rgbagame.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.room-eight a {
+  background-color: black;
+  /*background-image: url();*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#room .caption {
+  color: #ffffff;
+  position: absolute;
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.7));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.7));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.7));
+  text-align: justify;
+  bottom: 0;
+  padding: 10px;
+  line-height: 40px;
+  margin: 0;
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  height: 40px;
+  width: 630px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -webkit-transition: height .5s;
+}
+
+.caption small {
+  text-transform: none;
+}
+.caption small.inactive{
+  display: none;
+}
+
+#room .caption-full {
+  height: 230px;
+  line-height: 35px;
+}
+
+.menu .fa-circle,
+.fa-circle-thin {
+  color: white;
+}
+
+.arrows button {
+  height: 140px;
+  width: 60px;
+  font-size: 40px;
+  color: white;
+  background-color: rgba(0,0,0,0.4);
+  position: relative;
+  z-index: 1;
+  border: none;
+  top: 200px;
+  left: 90px;
+}
+
+.arrows .next {
+  left: 990px;
+}
+
+.arrows button:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.arrows button:focus {
+  outline: none;
+}
