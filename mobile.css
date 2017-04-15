@@ -1,25 +1,30 @@
+body {
+  position: fixed;
+}
+
 #perspective {
-  top: 70px;
-  left: 150px;
-  width: 1200px;
-  height: 600px;
+  top: 20px;
+  left: 90px;
+  width: 400px;
+  height: 200px;
   position: relative;
-  perspective: 600px;
+  -webkit-perspective: 200px;
+  perspective: 200px;
   border: none;
   font-family: "Lato", sans-serif;
 }
 
 #perspective .menu {
   position: relative;
-  top: -50px;
-  left: 535px;
+  top: -30px;
+  left: 125px;
 }
 
 #room {
   width: 100%;
   height: 100%;
   position: absolute;
-  transform-origin: 50% 50% 600px;
+  transform-origin: 50% 50% 200px;
   transform-style: preserve-3d;
   transition: all 0.4s linear;
   -webkit-transition: all 0.4s linear;
@@ -34,8 +39,8 @@
 .room-six,
 .room-seven,
 .room-eight {
-  width: 1200px;
-  height: 600px;
+  width: 400px;
+  height: 200px;
   transition: all 0.6s ease;
   -webkit-transition: all 0.6s ease;
   -mox-transition: all 0.6s ease;
@@ -49,24 +54,24 @@
 
 #room .room-two,
 .room-six {
-  transform: rotateY(-90deg) translateZ(-600px) translateX(600px);
+  transform: rotateY(-90deg) translateZ(-200px) translateX(200px);
 }
 
 #room .room-three,
 .room-seven {
-  transform: rotateY(180deg) translateZ(-1200px);
+  transform: rotateY(180deg) translateZ(-400px);
 }
 
 #room .room-four,
 .room-eight {
-  transform: rotateY(90deg) translateZ(-600px) translateX(-600px);
+  transform: rotateY(90deg) translateZ(-200px) translateX(-200px);
 }
 
 #room .room-top {
-  transform: rotateX(90deg) translateZ(300px) translateY(600px);
-  width: 1200px;
-  height: 1200px;
-  top: -300px;
+  transform: rotateX(90deg) translateZ(100px) translateY(200px);
+  width: 400px;
+  height: 400px;
+  top: -100px;
   background-image: url("https://static.pexels.com/photos/107956/pexels-photo-107956.jpeg");
   background-position: center;
   background-repeat: no-repeat;
@@ -74,10 +79,10 @@
 }
 
 #room .room-bottom {
-  transform: rotateX(90deg) translateZ(-300px) translateY(600px);
-  width: 1200px;
-  height: 1200px;
-  top: -300px;
+  transform: rotateX(90deg) translateZ(-100px) translateY(200px);
+  width: 400px;
+  height: 400px;
+  top: -100px;
   background-image: url("https://static.pexels.com/photos/1486/wood-pattern-ground-parquet-floor.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -85,8 +90,7 @@
 }
 
 #room .inactive {
-  opacity: 0;
-  visibility: hidden;
+  display: none;
 }
 
 #room figure {
@@ -104,19 +108,19 @@
 #room .nums {
   position: relative;
   display: inline-block;
-  top: -310px;
-  left: -560px;
-  font-size: 150px;
+  top: -100px;
+  left: -200px;
+  font-size: 70px;
   color: white;
 }
 
 #room div {
-  width: 700px;
-  height: 500px;
+  width: 250px;
+  height: 175px;
   display: inline-block;
   position: relative;
-  top: 50px;
-  left: 90px;
+  top: 15px;
+  left: 40px;
 }
 
 .room-one div {
@@ -151,7 +155,7 @@
   background-image: url(images/breakout.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
 }
 
 .room-six div {
@@ -179,19 +183,20 @@
   color: #ffffff;
   position: absolute;
   background: black;
-  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.8));
-  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.8));
-  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.8));
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.7));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.7));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.7));
   text-align: justify;
   bottom: 0;
-  padding: 10px;
-  line-height: 40px;
+  z-index: 1;
+  padding: 5px;
+  line-height: 15px;
   margin: 0;
-  font-size: 28px;
+  font-size: 10px;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
-  height: 40px;
-  width: 680px;
+  height: 15px;
+  width: 240px;
   transition: height .5s;
   -webkit-transition: height .5s;
   -webkit-transition: height .5s;
@@ -204,33 +209,27 @@
   display: none;
 }
 
-.caption .more-info {
-  float: right;
-  margin: 15px 4px 4px 4px;
-  font-size: 12px;
+#room .caption-full {
+  height: 120px;
 }
 
-#room .caption-full {
-  height: 280px;
-  line-height: 35px;
+.caption .more-info {
+  float: right;
+  margin: 3px 3px 3px 3px;
+  font-size: 10px;
 }
 
 .view {
   font-family: "Roboto", sans-serif;
-  font-size: 15px;
+  font-size: 10px;
   border: 1px solid white;
   text-decoration: none;
   color: white;
-  padding: 10px 20px 10px 20px;
+  padding: 5px 10px;
   position: absolute;
-  bottom: 20px;
-  left: 310px;
+  bottom: 10px;
+  left: 100px;
   border-radius: 35px;
-}
-
-.view:hover {
-  background-color: rgba(240,240,240, 1);
-  color: rgba(0,0,0,1);
 }
 
 .menu .fa-circle,
@@ -239,24 +238,20 @@
 }
 
 .arrows button {
-  height: 140px;
-  width: 60px;
-  font-size: 40px;
+  height: 80px;
+  width: 30px;
+  font-size: 25px;
   color: white;
   background-color: rgba(0,0,0,0.4);
   position: relative;
   z-index: 1;
   border: none;
-  top: 200px;
-  left: 90px;
+  top: 20px;
+  left: 30px;
 }
 
 .arrows .next {
-  left: 990px;
-}
-
-.arrows button:hover {
-  background-color: rgba(0,0,0,0.8);
+  left: 305px;
 }
 
 .arrows button:focus {
@@ -274,6 +269,25 @@
   text-transform: uppercase;
 }
 
+/*@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+and (orientation : landscape) {
+  #perspective {
+    display: none;
+  }
+
+  body {
+    background-color: black;
+  }
+
+  .flip-alert {
+    display: block;
+    margin: 15% auto;
+  }
+
+}*/
+
 @media screen and (orientation:portrait){
   #perspective {
     display: none;
@@ -289,7 +303,7 @@
   }
 }
 
-@media screen and (orientation: landscape) and (max-width: 560px){
+/*@media screen and (orientation: landscape){
   #perspective {
     display: none;
   }
@@ -303,24 +317,4 @@
     margin: 15% auto;
   }
 
-}
-
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : landscape)
-and (-webkit-min-device-pixel-ratio: 1)  {
-  #perspective {
-    display: none;
-  }
-
-  body {
-    background-color: black;
-  }
-
-  .sorry-alert {
-    display: block;
-    margin: 15% auto;
-  }
-
-}
+}*/

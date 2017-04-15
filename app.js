@@ -3,10 +3,12 @@ $(document).ready(function(){
 var view = ["rotateY(0deg)","rotateY(90deg)","rotateY(180deg)","rotateY(270deg)","rotateY(360deg)","rotateY(450deg)","rotateY(540deg)","rotateY(630deg)"];
 var x = 0;
 var y = 0;
-var circles = $("p i");
+var circles = $(".menu i");
 
+// create crazy long offset delayed transitions
 function flipRoom(){
   $(".room-five, .room-six, .room-seven, .room-eight").removeClass("inactive");
+
   $(".room-one, .room-two, .room-three, .room-four").addClass("inactive");
 }
 
@@ -16,8 +18,8 @@ function flipRoomBack(){
 }
 
 function jumpCircle(el){
-  $("p i").removeClass("fa-circle");
-  $("p i").addClass("fa-circle-thin");
+  $(".menu i").removeClass("fa-circle");
+  $(".menu i").addClass("fa-circle-thin");
   $(el).addClass("fa-circle");
   $(el).removeClass("fa-circle-thin");
 }
@@ -27,11 +29,11 @@ $(".next").click(function(){
   y = y + 90;
   jumpCircle(circles[x]);
   if (x === 4){
-    setTimeout(flipRoom, 200);
+    setTimeout(flipRoom, 20);
     // flipRoom();
   } else if (x > 7) {
     x = 0;
-    setTimeout(flipRoomBack, 200);
+    setTimeout(flipRoomBack, 20);
     // flipRoomBack();
     jumpCircle(circles[x]);
   }
@@ -44,11 +46,11 @@ $(".back").click(function(){
   console.log(x);
   jumpCircle(circles[x]);
   if (x === 3){
-    setTimeout(flipRoomBack, 200);
+    setTimeout(flipRoomBack, 20);
     // flipRoomBack();
   } else if (x < 0) {
     x = 7;
-    setTimeout(flipRoom, 200);
+    setTimeout(flipRoom, 20);
     // flipRoom();
     jumpCircle(circles[x]);
   }
@@ -121,13 +123,25 @@ $(circles[7]).click(function(){
   y = 630;
 });
 
+if ( $(window).width() > 900) {
+  $("#room div").hover(function(){
+    console.log("wtf");
+    $(this).children("p").addClass("caption-full");
+    $(this).find("small, a").removeClass("inactive");
+  }, function(){
+    $(this).children("p").removeClass("caption-full");
+    $(this).find("small, a").addClass("inactive");
+  });
+} else {
+  $("#room").on ("click", "div", function (e) {
+    e.preventDefault();
+  });
+  $(".caption").on("click touch", function(){
+    $(".caption").toggleClass("caption-full");
+    $(".caption").find("small, a").toggleClass("inactive");
+  });
+}
 
-$("#room a").hover(function(){
-  $(this).children("p").addClass("caption-full");
-  $(this).find("small").removeClass("inactive");
-}, function(){
-  $(this).children("p").removeClass("caption-full");
-  $(this).find("small").addClass("inactive");
-});
+
 
 });
