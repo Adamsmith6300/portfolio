@@ -4,11 +4,11 @@ var view = ["rotateY(0deg)","rotateY(90deg)","rotateY(180deg)","rotateY(270deg)"
 var x = 0;
 var y = 0;
 var circles = $(".menu i");
+var circleNum = ["one", "two", "three", "four", "five", "six", "seven", "eight"];
 
-// create crazy long offset delayed transitions
+// need to create crazy long offset delayed transitions to smooth out room flips
 function flipRoom(){
   $(".room-five, .room-six, .room-seven, .room-eight").removeClass("inactive");
-
   $(".room-one, .room-two, .room-three, .room-four").addClass("inactive");
 }
 
@@ -29,12 +29,10 @@ $(".next").click(function(){
   y = y + 90;
   jumpCircle(circles[x]);
   if (x === 4){
-    setTimeout(flipRoom, 20);
-    // flipRoom();
+    flipRoom();
   } else if (x > 7) {
     x = 0;
-    setTimeout(flipRoomBack, 20);
-    // flipRoomBack();
+    flipRoomBack();
     jumpCircle(circles[x]);
   }
   $("#room").css("transform", "rotateY(" + y + "deg)");
@@ -46,86 +44,30 @@ $(".back").click(function(){
   console.log(x);
   jumpCircle(circles[x]);
   if (x === 3){
-    setTimeout(flipRoomBack, 20);
-    // flipRoomBack();
+    flipRoomBack();
   } else if (x < 0) {
     x = 7;
-    setTimeout(flipRoom, 20);
-    // flipRoom();
+    flipRoom();
     jumpCircle(circles[x]);
   }
   $("#room").css("transform", "rotateY(" + y + "deg)");
 });
 
-
-// NEEDS TO BE REFACTORED********
-$(circles[0]).click(function(){
-  $("#room").css("transform", view[0]);
-  setTimeout(flipRoomBack, 250);
-  jumpCircle(this);
-  x = 0;
-  y = 0;
-});
-
-$(circles[1]).click(function(){
-  $("#room").css("transform", view[1]);
-  setTimeout(flipRoomBack, 250);
-  jumpCircle(this);
-  x = 1;
-  y = 90;
-});
-
-$(circles[2]).click(function(){
-  $("#room").css("transform", view[2]);
-  setTimeout(flipRoomBack, 250);
-  jumpCircle(this);
-  x = 2;
-  y = 180;
-});
-
-$(circles[3]).click(function(){
-  $("#room").css("transform", view[3]);
-  setTimeout(flipRoomBack, 300);
-  jumpCircle(this);
-  x = 3;
-  y = 270;
-});
-
-$(circles[4]).click(function(){
-  $("#room").css("transform", view[4]);
-  setTimeout(flipRoom, 300);
-  jumpCircle(this);
-  x = 4;
-  y = 360;
-});
-
-$(circles[5]).click(function(){
-  $("#room").css("transform", view[5]);
-  setTimeout(flipRoom, 300);
-  jumpCircle(this);
-  x = 5;
-  y = 450;
-});
-
-$(circles[6]).click(function(){
-  $("#room").css("transform", view[6]);
-  setTimeout(flipRoom, 300);
-  jumpCircle(this);
-  x = 6;
-  y = 540;
-});
-
-$(circles[7]).click(function(){
-  $("#room").css("transform", view[7]);
-  setTimeout(flipRoom, 300);
-  jumpCircle(this);
-  x = 7;
-  y = 630;
+// circles menu control
+$(circles).click(function(){
+  for (var i = 0; i < circleNum.length; i++){
+    if (this.classList.contains(circleNum[i])){
+      $("#room").css("transform", view[i]);
+      flipRoomBack();
+      jumpCircle(this);
+      x = i;
+      y = i * 90;
+    }
+  }
 });
 
 if ( $(window).width() > 900) {
   $("#room div").hover(function(){
-    console.log("wtf");
     $(this).children("p").addClass("caption-full");
     $(this).find("small, a").removeClass("inactive");
   }, function(){
@@ -133,15 +75,10 @@ if ( $(window).width() > 900) {
     $(this).find("small, a").addClass("inactive");
   });
 } else {
-  $("#room").on ("click", "div", function (e) {
-    e.preventDefault();
-  });
   $(".caption").on("click touch", function(){
     $(".caption").toggleClass("caption-full");
     $(".caption").find("small, a").toggleClass("inactive");
   });
 }
-
-
 
 });
