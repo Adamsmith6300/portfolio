@@ -5,6 +5,8 @@
   height: 600px;
   position: relative;
   perspective: 600px;
+  -webkit-perspective: 600px;
+  -moz-perspective: 600px;
   border: none;
   font-family: "Lato", sans-serif;
 }
@@ -12,7 +14,7 @@
 #perspective .menu {
   position: relative;
   top: -50px;
-  left: 535px;
+  left: 570px;
 }
 
 #room {
@@ -20,7 +22,11 @@
   height: 100%;
   position: absolute;
   transform-origin: 50% 50% 600px;
+  -webkit-transform-origin: 50% 50% 600px;
+  -moz-transform-origin: 50% 50% 600px;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
   transition: all 0.4s linear;
   -webkit-transition: all 0.4s linear;
   -mox-transition: all 0.4s linear;
@@ -45,29 +51,39 @@
 #room .room-one,
 .room-five {
   transform: rotateY(0deg) translateZ(0px);
+  -webkit-transform: rotateY(0deg) translateZ(0px);
+  -moz-transform: rotateY(0deg) translateZ(0px);
 }
 
 #room .room-two,
 .room-six {
   transform: rotateY(-90deg) translateZ(-600px) translateX(600px);
+  -webkit-transform: rotateY(-90deg) translateZ(-600px) translateX(600px);
+  -moz-transform: rotateY(-90deg) translateZ(-600px) translateX(600px);
 }
 
 #room .room-three,
 .room-seven {
   transform: rotateY(180deg) translateZ(-1200px);
+  -webkit-transform: rotateY(180deg) translateZ(-1200px);
+  -moz-transform: rotateY(180deg) translateZ(-1200px);
 }
 
 #room .room-four,
 .room-eight {
   transform: rotateY(90deg) translateZ(-600px) translateX(-600px);
+  -webkit-transform: rotateY(90deg) translateZ(-600px) translateX(-600px);
+  -moz-transform: rotateY(90deg) translateZ(-600px) translateX(-600px);
 }
 
 #room .room-top {
   transform: rotateX(90deg) translateZ(300px) translateY(600px);
+  -webkit-transform: rotateX(90deg) translateZ(300px) translateY(600px);
+  -moz-transform: rotateX(90deg) translateZ(300px) translateY(600px);
   width: 1200px;
   height: 1200px;
   top: -300px;
-  background-image: url("https://static.pexels.com/photos/107956/pexels-photo-107956.jpeg");
+  background-image: url(images/tinified/space.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -75,10 +91,12 @@
 
 #room .room-bottom {
   transform: rotateX(90deg) translateZ(-300px) translateY(600px);
+  -webkit-transform: rotateX(90deg) translateZ(-300px) translateY(600px);
+  -moz-transform: rotateX(90deg) translateZ(-300px) translateY(600px);
   width: 1200px;
   height: 1200px;
   top: -300px;
-  background-image: url("https://static.pexels.com/photos/1486/wood-pattern-ground-parquet-floor.jpg");
+  background-image: url(images/tinified/woodfloor.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -95,7 +113,7 @@
   position: absolute;
   border-top: none;
   text-align: center;
-  background-image: url("https://images.unsplash.com/photo-1457092716468-97352752b749?dpr=1&auto=format&fit=crop&w=1500&h=1095&q=80&cs=tinysrgb&crop=");
+  background-image: url(images/tinified/brickwall.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -120,34 +138,35 @@
 }
 
 .room-one div {
-  background-image: url(images/surfin.png);
+  background-image: url(images/tinified/surfin.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .room-two div {
-  background-image: url(images/besthikes.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.room-three div {
   background-image: url(images/calendar.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.room-four div {
-  background-image: url(images/patatap.png);
+.room-three div {
+  background-image: url(images/tinified/casacaliente.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.room-five div {
+.room-four div {
+  background-color: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*styling for additional four walls*/
+/*.room-five div {
   background-image: url(images/breakout.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -155,7 +174,7 @@
 }
 
 .room-six div {
-  background-image: url(images/casacaliente.png);
+  background-image: url(images/);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -169,11 +188,11 @@
 }
 
 .room-eight div {
-  background-color: black;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
+}*/
 
 #room .caption {
   color: #ffffff;

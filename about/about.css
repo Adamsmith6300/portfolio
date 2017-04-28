@@ -8,18 +8,18 @@ body {
 }
 
 .about {
-  width: 700px;
-  height: 100%;
+  width: 50%;
   font-family: "Lato", sans-serif;
   display: inline;
   float: right;
-  margin: 50px auto;
+  margin: 250px auto;
 }
 
 .about h1 {
   font-weight: normal;
   font-size: 40px;
-  margin: 0;
+  margin: 0 auto;
+  width: 560px;
 }
 
 .about img {
@@ -29,31 +29,46 @@ body {
   height: 40px;
 }
 
-.about-content {
-  list-style: none;
+.about-content-one {
   width: 525px;
   font-size: 20px;
   text-align: justify;
   font-family: "Lato", sans-serif;
   padding: 0px;
+  margin: 20px auto;
 }
 
-.about-content li {
-  margin-bottom: 10px;
-  padding: 10px;
-}
-
-.photos {
+.about-content-two {
+  width: 50%;
+  font-size: 20px;
+  text-align: justify;
+  font-family: "Lato", sans-serif;
+  padding: 0px;
+  margin: 200px auto;
   display: inline;
-  width: 500px;
+  float: left;
+}
+
+.about-content-two p {
+  width: 525px;
+  margin: 20px auto;
 }
 
 .humid-photo {
-  width: 600px;
+  width: 50%;
   height: 1000px;
 }
 
-.resume {
+.adam-photo {
+  width: 50%;
+  height: 750px;
+  display: inline;
+  position: relative;
+  top: -3px;
+}
+
+.resume,
+.back-portfolio {
   border: 1px solid black;
   border-radius: 35px;
   padding: 15px 15px 17px 15px;
@@ -63,13 +78,42 @@ body {
   text-decoration: none;
   color: black;
   position: relative;
-  left: 160px;
+  left: 50px;
   top: 50px;
   transition: all 0.6s ease;
   -webkit-transition: all 0.6s ease;
 }
 
-.resume:hover {
+.resume:hover,
+.back-portfolio:hover {
   background-color: black;
   color: white;
+}
+
+.back-portfolio {
+  left: 100px;
+}
+
+@media (max-width: 750px){
+
+  .about {
+    float: none;
+    position: relative;
+    top: 50px;
+  }
+
+  .about-content-two {
+    margin: 0 auto;
+    margin-bottom: 120px;
+  }
+
+  .about-content-two p,
+  .about-content-one p {
+    margin-top: 0;
+  }
+
+  .adam {
+    width: 700px;
+  }
+
 }

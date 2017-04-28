@@ -72,7 +72,7 @@ body {
   width: 400px;
   height: 400px;
   top: -100px;
-  background-image: url("https://static.pexels.com/photos/107956/pexels-photo-107956.jpeg");
+  background-image: url(images/space.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -83,7 +83,7 @@ body {
   width: 400px;
   height: 400px;
   top: -100px;
-  background-image: url("https://static.pexels.com/photos/1486/wood-pattern-ground-parquet-floor.jpg");
+  background-image: url(images/woodfloor.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -99,7 +99,7 @@ body {
   position: absolute;
   border-top: none;
   text-align: center;
-  background-image: url("https://images.unsplash.com/photo-1457092716468-97352752b749?dpr=1&auto=format&fit=crop&w=1500&h=1095&q=80&cs=tinysrgb&crop=");
+  background-image: url(images/brickwall.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -131,26 +131,26 @@ body {
 }
 
 .room-two div {
-  background-image: url(images/besthikes.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.room-three div {
   background-image: url(images/calendar.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.room-four div {
-  background-image: url(images/patatap.png);
+.room-three div {
+  background-image: url(images/casacaliente.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.room-four div {
+  background-color: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/*
 .room-five div {
   background-image: url(images/breakout.png);
   background-position: center;
@@ -159,7 +159,7 @@ body {
 }
 
 .room-six div {
-  background-image: url(images/casacaliente.png);
+  background-image: url(images/);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -173,11 +173,10 @@ body {
 }
 
 .room-eight div {
-  background-color: black;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
+}*/
 
 #room .caption {
   color: #ffffff;
@@ -216,7 +215,7 @@ body {
 .caption .more-info {
   float: right;
   margin: 3px 3px 3px 3px;
-  font-size: 10px;
+  font-size: 8px;
 }
 
 .view {
@@ -269,25 +268,6 @@ body {
   text-transform: uppercase;
 }
 
-/*@media only screen
-and (min-device-width : 375px)
-and (max-device-width : 667px)
-and (orientation : landscape) {
-  #perspective {
-    display: none;
-  }
-
-  body {
-    background-color: black;
-  }
-
-  .flip-alert {
-    display: block;
-    margin: 15% auto;
-  }
-
-}*/
-
 @media screen and (orientation:portrait){
   #perspective {
     display: none;
@@ -302,19 +282,3 @@ and (orientation : landscape) {
     margin: 15% auto;
   }
 }
-
-/*@media screen and (orientation: landscape){
-  #perspective {
-    display: none;
-  }
-
-  body {
-    background-color: black;
-  }
-
-  .sorry-alert {
-    display: block;
-    margin: 15% auto;
-  }
-
-}*/

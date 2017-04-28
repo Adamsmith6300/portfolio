@@ -1,21 +1,10 @@
 $(document).ready(function(){
 
-var view = ["rotateY(0deg)","rotateY(90deg)","rotateY(180deg)","rotateY(270deg)","rotateY(360deg)","rotateY(450deg)","rotateY(540deg)","rotateY(630deg)"];
+var view = ["rotateY(0deg)","rotateY(90deg)","rotateY(180deg)","rotateY(270deg)"];
 var x = 0;
 var y = 0;
 var circles = $(".menu i");
-var circleNum = ["one", "two", "three", "four", "five", "six", "seven", "eight"];
-
-// need to create crazy long offset delayed transitions to smooth out room flips
-function flipRoom(){
-  $(".room-five, .room-six, .room-seven, .room-eight").removeClass("inactive");
-  $(".room-one, .room-two, .room-three, .room-four").addClass("inactive");
-}
-
-function flipRoomBack(){
-  $(".room-five, .room-six, .room-seven, .room-eight").addClass("inactive");
-  $(".room-one, .room-two, .room-three, .room-four").removeClass("inactive");
-}
+var circleNum = ["one", "two", "three", "four"];
 
 function jumpCircle(el){
   $(".menu i").removeClass("fa-circle");
@@ -28,11 +17,8 @@ $(".next").click(function(){
   x++;
   y = y + 90;
   jumpCircle(circles[x]);
-  if (x === 4){
-    flipRoom();
-  } else if (x > 7) {
+  if (x > 3){
     x = 0;
-    flipRoomBack();
     jumpCircle(circles[x]);
   }
   $("#room").css("transform", "rotateY(" + y + "deg)");
@@ -41,13 +27,9 @@ $(".next").click(function(){
 $(".back").click(function(){
   x--;
   y = y - 90;
-  console.log(x);
   jumpCircle(circles[x]);
-  if (x === 3){
-    flipRoomBack();
-  } else if (x < 0) {
-    x = 7;
-    flipRoom();
+  if (x < 0) {
+    x = 3;
     jumpCircle(circles[x]);
   }
   $("#room").css("transform", "rotateY(" + y + "deg)");
@@ -58,7 +40,6 @@ $(circles).click(function(){
   for (var i = 0; i < circleNum.length; i++){
     if (this.classList.contains(circleNum[i])){
       $("#room").css("transform", view[i]);
-      flipRoomBack();
       jumpCircle(this);
       x = i;
       y = i * 90;
@@ -66,6 +47,7 @@ $(circles).click(function(){
   }
 });
 
+// portfolio project caption control for desktop/mobile, hover vs click/tap
 if ( $(window).width() > 900) {
   $("#room div").hover(function(){
     $(this).children("p").addClass("caption-full");
@@ -82,3 +64,45 @@ if ( $(window).width() > 900) {
 }
 
 });
+
+
+
+// These functions allow the user to see eight walls with portfolio content instead of just four when active
+// function flipRoom(){
+//   $(".room-five, .room-six, .room-seven, .room-eight").removeClass("inactive");
+//   $(".room-one, .room-two, .room-three, .room-four").addClass("inactive");
+// }
+//
+// function flipRoomBack(){
+//   $(".room-five, .room-six, .room-seven, .room-eight").addClass("inactive");
+//   $(".room-one, .room-two, .room-three, .room-four").removeClass("inactive");
+// }
+
+// original code for when there were eight walls in use
+// $(".next").click(function(){
+//   x++;
+//   y = y + 90;
+//   jumpCircle(circles[x]);
+//   if (x === 4){
+//     flipRoom();
+//   } else if (x > 7) {
+//     x = 0;
+//     flipRoomBack();
+//     jumpCircle(circles[x]);
+//   }
+//   $("#room").css("transform", "rotateY(" + y + "deg)");
+// });
+//
+// $(".back").click(function(){
+//   x--;
+//   y = y - 90;
+//   jumpCircle(circles[x]);
+//   if (x === 3){
+//     flipRoomBack();
+//   } else if (x < 0) {
+//     x = 7;
+//     flipRoom();
+//     jumpCircle(circles[x]);
+//   }
+//   $("#room").css("transform", "rotateY(" + y + "deg)");
+// });
